@@ -1,0 +1,48 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="text-info navbar-brand" href="">Inst'grem (eng. Bad copy)</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/profile">Profile</a></li>
+            <li><a href="/settings">My account</a></li>
+        </ul>
+        <div class="pull-right">
+        <form method="post" action="/login/signout">
+            <input class="btn btn-info navbar-btn" type="submit" name="signOutButton" value="Sign Out">
+        </form>
+        </div>
+    </div>
+</nav>
+
+<!--<form method="post" action="/login/signout">
+    <input type="submit" name="signOutButton" value="Sign Out">
+</form>-->
+
+<form style="width: 1500px" method="post" enctype="multipart/form-data" action="/profile/uploadImage">
+    <div class="row">
+        <div class="col-xs-2">
+            <input type="file" name="file">
+        </div>
+        <div class="col-xs-2">
+            <button type="submit" name="uploadImage">Upload image</button>
+        </div>
+    </div>
+</form>
+
+
+<form method="POST" action="/profile/deleteImg">
+    <?php $index = 1;
+    foreach ($imageName as $img) {
+        echo '<div style="float: left; padding: 0.07%">';
+        echo '<h4><img style="width: 470px; height: 470px;"src="img/'.$imageName[$index - 1].'">'; echo '<br>';
+        echo $homeMessage[$index - 1];
+        if($session === $homeMessage[$index - 1]) {?>
+            <button class="btn btn-danger" type="submit" name="name" value="<?php echo $imageName[$index - 1] ?>">Delete</button>
+    <?php };
+    if($index % 4 === 0) {
+        echo '<br><br>';
+    }
+         $index = $index + 1;
+        echo '</div>';
+    }; ?></h4></form>

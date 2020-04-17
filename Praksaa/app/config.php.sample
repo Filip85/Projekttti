@@ -1,0 +1,9 @@
+<?php
+
+return array(
+    'servername' => 'localhost',
+    'username' => 'admin',
+    'password' => 'secretpassword',
+    'dbname' => "User",
+    'charset' => "utf8mb4"
+);

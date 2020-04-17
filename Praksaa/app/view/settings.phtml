@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href=" ">Inst'grem (eng. Bad copy)</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/profile">Profile</a></li>
+            <li class="active"><a href="/settings">My account</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<h1 style="text-align: center"><?php echo 'Hi, '.$homeMessage . "!" ?></h1><br>
+
+
+<div class="text-center"">
+    <div>
+        <form method="post" action="settings/changePassword">
+            New password:<br>
+                <input type="password" name="password"><br><br>
+            <input class="btn btn-info" type="submit" name="changePassword" value="Change password">
+        </form>
+    </div>
+<br>
+    <div>
+        <form method="post" action="settings/changeStatus">
+            <p>Your profile is <?php echo $status ?></p>
+            <input class="btn btn-info" type="submit" name="changeStatus" value="Change status">
+    </form>
+    </div>
+<br>
+    <div>
+        <form method="post" action="settings/deleteUserAccount">
+            <input class="btn btn-danger"type="submit" name="removeAccount" value="Remove account">
+        </form>
+    </div>
+</div>
